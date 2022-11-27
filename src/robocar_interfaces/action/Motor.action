@@ -2,5 +2,5 @@ bool reverse
 uint16 duty_cycle
 ---
 bool direction_changed
-uint16 duty_cycle_change
+int16 duty_cycle_change
 ---
