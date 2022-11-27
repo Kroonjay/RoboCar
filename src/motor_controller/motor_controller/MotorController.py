@@ -4,6 +4,7 @@ from rclpy.action import ActionServer
 from rclpy.node import Node
 from robocar_interfaces.action import Motor
 
+
 class MotorController(Node):
 
     def __init__(self, motor_one_pin: int, motor_two_pin: int, motor_enable_pin: int):
@@ -21,7 +22,7 @@ class MotorController(Node):
             'motor',
             self.execute_callback
         )
-    
+
     def execute_callback(self, goal_handle):
         self.get_logger().info("Executing Goal!")
         current_duty_cycle = self.duty_cycle
@@ -34,7 +35,7 @@ class MotorController(Node):
         else:
             result.direction_changed = False
         result.duty_cycle_change = self.duty_cycle - current_duty_cycle
-        
+
         return result
 
     def setup(self):
@@ -78,18 +79,21 @@ class MotorController(Node):
         return
 
     def stop(self):
-        self.get_logger().info("Stopping Motor | Cleaning up GPIO Devices | Run setup again to restart")
+        self.get_logger().info(
+            "Stopping Motor | Cleaning up GPIO Devices | Run setup again to restart")
         self.__motor.stop()
         GPIO.cleanup()
         self.__motor = None
         return self
 
+
 def main(args=None):
     rclpy.init(args=args)
-    motor_one_pin = 15
-    motor_two_pin = 13
-    motor_enable_pin = 11
-    motor_controller = MotorController(motor_one_pin=motor_one_pin, motor_two_pin=motor_two_pin,motor_enable_pin=motor_enable_pin)
+    motor_one_pin = 13
+    motor_two_pin = 11
+    motor_enable_pin = 15
+    motor_controller = MotorController(
+        motor_one_pin=motor_one_pin, motor_two_pin=motor_two_pin, motor_enable_pin=motor_enable_pin)
     motor_controller.setup()
     rclpy.spin(motor_controller)
     motor_controller.stop()
