@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/robocar_interfaces/action/__init__.py"
   "../rosidl_generator_py/robocar_interfaces/action/_motor.py"
   "../rosidl_generator_py/robocar_interfaces/action/_motor_s.c"
+  "../rosidl_generator_py/robocar_interfaces/action/_servo.py"
+  "../rosidl_generator_py/robocar_interfaces/action/_servo_s.c"
   "CMakeFiles/robocar_interfaces__py"
 )
 
