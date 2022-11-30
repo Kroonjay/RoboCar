@@ -76,3 +76,6 @@ def main(args=None):
     servo_controller.setup()
     rclpy.spin(servo_controller)
     servo_controller.stop()
+
+if __name__ == '__main__':
+    main()
