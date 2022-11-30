@@ -1,6 +1,7 @@
 {
   "package_name": "robocar_interfaces",
   "non_idl_tuples": [
-    "/home/scout/RoboCar/src/robocar_interfaces:action/Motor.action"
+    "/home/scout/RoboCar/src/robocar_interfaces:action/Motor.action",
+    "/home/scout/RoboCar/src/robocar_interfaces:action/Servo.action"
   ]
 }

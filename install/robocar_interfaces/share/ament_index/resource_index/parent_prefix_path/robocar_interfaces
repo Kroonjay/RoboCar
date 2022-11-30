@@ -1,1 +1,1 @@
-/home/scout/RoboCar/install/motor_controller:/opt/ros/humble
+/home/scout/RoboCar/install/servo_controller:/home/scout/RoboCar/install/robocar_interfaces:/home/scout/RoboCar/install/motor_controller:/opt/ros/humble

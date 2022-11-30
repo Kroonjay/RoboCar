@@ -83,6 +83,7 @@ rosidl_generator_c/robocar_interfaces/action/motor.h: /opt/ros/humble/share/rosi
 rosidl_generator_c/robocar_interfaces/action/motor.h: /opt/ros/humble/share/rosidl_generator_c/resource/msg__type_support.h.em
 rosidl_generator_c/robocar_interfaces/action/motor.h: /opt/ros/humble/share/rosidl_generator_c/resource/srv__type_support.h.em
 rosidl_generator_c/robocar_interfaces/action/motor.h: rosidl_adapter/robocar_interfaces/action/Motor.idl
+rosidl_generator_c/robocar_interfaces/action/motor.h: rosidl_adapter/robocar_interfaces/action/Servo.idl
 rosidl_generator_c/robocar_interfaces/action/motor.h: /opt/ros/humble/share/action_msgs/msg/GoalInfo.idl
 rosidl_generator_c/robocar_interfaces/action/motor.h: /opt/ros/humble/share/action_msgs/msg/GoalStatus.idl
 rosidl_generator_c/robocar_interfaces/action/motor.h: /opt/ros/humble/share/action_msgs/msg/GoalStatusArray.idl
@@ -102,8 +103,23 @@ rosidl_generator_c/robocar_interfaces/action/detail/motor__struct.h: rosidl_gene
 rosidl_generator_c/robocar_interfaces/action/detail/motor__type_support.h: rosidl_generator_c/robocar_interfaces/action/motor.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/robocar_interfaces/action/detail/motor__type_support.h
 
+rosidl_generator_c/robocar_interfaces/action/servo.h: rosidl_generator_c/robocar_interfaces/action/motor.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/robocar_interfaces/action/servo.h
+
+rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.h: rosidl_generator_c/robocar_interfaces/action/motor.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.h
+
+rosidl_generator_c/robocar_interfaces/action/detail/servo__struct.h: rosidl_generator_c/robocar_interfaces/action/motor.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/robocar_interfaces/action/detail/servo__struct.h
+
+rosidl_generator_c/robocar_interfaces/action/detail/servo__type_support.h: rosidl_generator_c/robocar_interfaces/action/motor.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/robocar_interfaces/action/detail/servo__type_support.h
+
 rosidl_generator_c/robocar_interfaces/action/detail/motor__functions.c: rosidl_generator_c/robocar_interfaces/action/motor.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/robocar_interfaces/action/detail/motor__functions.c
+
+rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c: rosidl_generator_c/robocar_interfaces/action/motor.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c
 
 CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/motor__functions.c.o: CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/flags.make
 CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/motor__functions.c.o: rosidl_generator_c/robocar_interfaces/action/detail/motor__functions.c
@@ -119,14 +135,30 @@ CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/motor__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_c/robocar_interfaces/action/detail/motor__functions.c -o CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/motor__functions.c.s
 
+CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.o: CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/flags.make
+CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.o: rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c
+CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.o: CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/scout/RoboCar/build/robocar_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.o -MF CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.o.d -o CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.o -c /home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c
+
+CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c > CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.i
+
+CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c -o CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.s
+
 # Object files for target robocar_interfaces__rosidl_generator_c
 robocar_interfaces__rosidl_generator_c_OBJECTS = \
-"CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/motor__functions.c.o"
+"CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/motor__functions.c.o" \
+"CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.o"
 
 # External object files for target robocar_interfaces__rosidl_generator_c
 robocar_interfaces__rosidl_generator_c_EXTERNAL_OBJECTS =
 
 librobocar_interfaces__rosidl_generator_c.so: CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/motor__functions.c.o
+librobocar_interfaces__rosidl_generator_c.so: CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c.o
 librobocar_interfaces__rosidl_generator_c.so: CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/build.make
 librobocar_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/libaction_msgs__rosidl_generator_c.so
 librobocar_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so
@@ -134,7 +166,7 @@ librobocar_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/libunique_iden
 librobocar_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 librobocar_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/librcutils.so
 librobocar_interfaces__rosidl_generator_c.so: CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/scout/RoboCar/build/robocar_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared library librobocar_interfaces__rosidl_generator_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/scout/RoboCar/build/robocar_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C shared library librobocar_interfaces__rosidl_generator_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -149,7 +181,12 @@ CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c
 CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/robocar_interfaces/action/detail/motor__functions.h
 CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/robocar_interfaces/action/detail/motor__struct.h
 CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/robocar_interfaces/action/detail/motor__type_support.h
+CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.c
+CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/robocar_interfaces/action/detail/servo__functions.h
+CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/robocar_interfaces/action/detail/servo__struct.h
+CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/robocar_interfaces/action/detail/servo__type_support.h
 CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/robocar_interfaces/action/motor.h
+CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/robocar_interfaces/action/servo.h
 	cd /home/scout/RoboCar/build/robocar_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/scout/RoboCar/src/robocar_interfaces /home/scout/RoboCar/src/robocar_interfaces /home/scout/RoboCar/build/robocar_interfaces /home/scout/RoboCar/build/robocar_interfaces /home/scout/RoboCar/build/robocar_interfaces/CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/robocar_interfaces__rosidl_generator_c.dir/depend
 

@@ -3,7 +3,11 @@ file(REMOVE_RECURSE
   "rosidl_generator_cpp/robocar_interfaces/action/detail/motor__builder.hpp"
   "rosidl_generator_cpp/robocar_interfaces/action/detail/motor__struct.hpp"
   "rosidl_generator_cpp/robocar_interfaces/action/detail/motor__traits.hpp"
+  "rosidl_generator_cpp/robocar_interfaces/action/detail/servo__builder.hpp"
+  "rosidl_generator_cpp/robocar_interfaces/action/detail/servo__struct.hpp"
+  "rosidl_generator_cpp/robocar_interfaces/action/detail/servo__traits.hpp"
   "rosidl_generator_cpp/robocar_interfaces/action/motor.hpp"
+  "rosidl_generator_cpp/robocar_interfaces/action/servo.hpp"
 )
 
 # Per-language clean rules from dependency scanning.

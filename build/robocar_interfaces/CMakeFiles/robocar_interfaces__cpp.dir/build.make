@@ -70,6 +70,10 @@ CMakeFiles/robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/acti
 CMakeFiles/robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/detail/motor__builder.hpp
 CMakeFiles/robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/detail/motor__struct.hpp
 CMakeFiles/robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/detail/motor__traits.hpp
+CMakeFiles/robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/servo.hpp
+CMakeFiles/robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/detail/servo__builder.hpp
+CMakeFiles/robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/detail/servo__struct.hpp
+CMakeFiles/robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/detail/servo__traits.hpp
 
 rosidl_generator_cpp/robocar_interfaces/action/motor.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
 rosidl_generator_cpp/robocar_interfaces/action/motor.hpp: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py
@@ -87,6 +91,7 @@ rosidl_generator_cpp/robocar_interfaces/action/motor.hpp: /opt/ros/humble/share/
 rosidl_generator_cpp/robocar_interfaces/action/motor.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__struct.hpp.em
 rosidl_generator_cpp/robocar_interfaces/action/motor.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__traits.hpp.em
 rosidl_generator_cpp/robocar_interfaces/action/motor.hpp: rosidl_adapter/robocar_interfaces/action/Motor.idl
+rosidl_generator_cpp/robocar_interfaces/action/motor.hpp: rosidl_adapter/robocar_interfaces/action/Servo.idl
 rosidl_generator_cpp/robocar_interfaces/action/motor.hpp: /opt/ros/humble/share/action_msgs/msg/GoalInfo.idl
 rosidl_generator_cpp/robocar_interfaces/action/motor.hpp: /opt/ros/humble/share/action_msgs/msg/GoalStatus.idl
 rosidl_generator_cpp/robocar_interfaces/action/motor.hpp: /opt/ros/humble/share/action_msgs/msg/GoalStatusArray.idl
@@ -106,11 +111,27 @@ rosidl_generator_cpp/robocar_interfaces/action/detail/motor__struct.hpp: rosidl_
 rosidl_generator_cpp/robocar_interfaces/action/detail/motor__traits.hpp: rosidl_generator_cpp/robocar_interfaces/action/motor.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/robocar_interfaces/action/detail/motor__traits.hpp
 
+rosidl_generator_cpp/robocar_interfaces/action/servo.hpp: rosidl_generator_cpp/robocar_interfaces/action/motor.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/robocar_interfaces/action/servo.hpp
+
+rosidl_generator_cpp/robocar_interfaces/action/detail/servo__builder.hpp: rosidl_generator_cpp/robocar_interfaces/action/motor.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/robocar_interfaces/action/detail/servo__builder.hpp
+
+rosidl_generator_cpp/robocar_interfaces/action/detail/servo__struct.hpp: rosidl_generator_cpp/robocar_interfaces/action/motor.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/robocar_interfaces/action/detail/servo__struct.hpp
+
+rosidl_generator_cpp/robocar_interfaces/action/detail/servo__traits.hpp: rosidl_generator_cpp/robocar_interfaces/action/motor.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/robocar_interfaces/action/detail/servo__traits.hpp
+
 robocar_interfaces__cpp: CMakeFiles/robocar_interfaces__cpp
 robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/detail/motor__builder.hpp
 robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/detail/motor__struct.hpp
 robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/detail/motor__traits.hpp
+robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/detail/servo__builder.hpp
+robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/detail/servo__struct.hpp
+robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/detail/servo__traits.hpp
 robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/motor.hpp
+robocar_interfaces__cpp: rosidl_generator_cpp/robocar_interfaces/action/servo.hpp
 robocar_interfaces__cpp: CMakeFiles/robocar_interfaces__cpp.dir/build.make
 .PHONY : robocar_interfaces__cpp
 

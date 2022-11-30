@@ -15,6 +15,10 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/detail/motor__builder.hpp" "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/motor.hpp"
   "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/detail/motor__struct.hpp" "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/motor.hpp"
   "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/detail/motor__traits.hpp" "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/motor.hpp"
+  "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/detail/servo__builder.hpp" "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/motor.hpp"
+  "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/detail/servo__struct.hpp" "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/motor.hpp"
+  "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/detail/servo__traits.hpp" "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/motor.hpp"
+  "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/servo.hpp" "/home/scout/RoboCar/build/robocar_interfaces/rosidl_generator_cpp/robocar_interfaces/action/motor.hpp"
   )
 
 
