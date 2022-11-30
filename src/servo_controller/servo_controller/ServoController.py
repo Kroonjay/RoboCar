@@ -52,7 +52,7 @@ class ServoController(Node):
         current_angle = self.angle
         self.run(goal_handle.request.angle)
         goal_handle.succeed()
-        result = Servo.result()
+        result = Servo.Result()
         result.angle_delta = self.angle - current_angle
         return result
 
