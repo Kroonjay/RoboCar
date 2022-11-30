@@ -28,14 +28,14 @@ class ServoController(Node):
 
     def __set_duty_cycle(self):
         duty_cycle = map(self.angle, 0, 180, self.min_duty, self.max_duty)
-        self.get_logger.debug(f"Modified Duty Cycle | Previous: {self.duty_cycle} | New: {duty_cycle}")
+        self.get_logger().debug(f"Modified Duty Cycle | Previous: {self.duty_cycle} | New: {duty_cycle}")
         self.servo.ChangeDutyCycle(duty_cycle)
         self.duty_cycle = duty_cycle
         return self
 
     def __set_angle(self, angle: int):
         if not angle > 0 and angle < 180:
-            self.get_logger.error(f"Invalid Angle Set | Must be between 0 and 180 | Got: {angle}")
+            self.get_logger().error(f"Invalid Angle Set | Must be between 0 and 180 | Got: {angle}")
             return
         self.angle = angle
         return self
