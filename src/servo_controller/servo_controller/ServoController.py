@@ -89,7 +89,7 @@ def main(args=None):
     rclpy.init(args=args)
     servo_pin=12
     offset = 0.5
-    servo_controller = ServoController(servo_pin, offset)
+    servo_controller = ServoController()
     servo_controller.setup()
     rclpy.spin(servo_controller)
     servo_controller.stop()
