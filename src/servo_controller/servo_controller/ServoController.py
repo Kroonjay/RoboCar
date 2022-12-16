@@ -40,9 +40,9 @@ class ServoController(Node):
         )
 
     def __set_duty_cycle(self):
-        offset = self.get_parameter(SERVO_OFFSET_PARAM_NAME).get_parameter_value()
+        offset = self.get_parameter(SERVO_OFFSET_PARAM_NAME).get_parameter_value().double_value
         duty_cycle = map(self.angle, SERVO_MIN_ANGLE, SERVO_MAX_ANGLE, get_min_duty(offset), get_max_duty(offset))
-        self.get_logger().debug(f"Modified Duty Cycle | Previous: {self.duty_cycle} | New: {duty_cycle}")
+        self.get_logger().debug(f"Modified Duty Cycle | Previous: {self.duty_cycle} | New: {duty_cycle} | Offset: {offset}")
         self.servo.ChangeDutyCycle(duty_cycle)
         self.duty_cycle = duty_cycle
         return self
