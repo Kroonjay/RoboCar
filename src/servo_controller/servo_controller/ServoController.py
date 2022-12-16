@@ -54,6 +54,7 @@ class ServoController(Node):
         goal_handle.succeed()
         result = Servo.Result()
         result.angle_delta = self.angle - current_angle
+        result.duty_cycle = self.duty_cycle
         return result
 
     def run(self, angle: int):
