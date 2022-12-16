@@ -58,7 +58,7 @@ class ServoController(Node):
         GPIO.setmode(GPIO.BOARD)
         servo_pin = self.get_parameter(SERVO_PIN_PARAM_NAME).get_parameter_value().integer_value
         servo_frequency = self.get_parameter(SERVO_FREQUENCY_PARAM_NAME).get_parameter_value().integer_value
-        self.get_logger.info(f"Initializing ServoController | Servo Pin: {servo_pin} | Servo Frequency: {servo_frequency}")
+        self.get_logger().info(f"Initializing ServoController | Servo Pin: {servo_pin} | Servo Frequency: {servo_frequency}")
         GPIO.setup(servo_pin, GPIO.OUT)
         GPIO.output(servo_pin, GPIO.LOW)
         self.servo = GPIO.PWM(servo_pin, servo_frequency)
