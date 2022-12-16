@@ -4,20 +4,33 @@ from rclpy.action import ActionServer
 from rclpy.node import Node
 from robocar_interfaces.action import Servo
 
+SERVO_PIN_PARAM_NAME = "servo_pin"
+SERVO_OFFSET_PARAM_NAME = "servo_offset"
+SERVO_FREQUENCY_PARAM_NAME = "servo_frequency"
+
+SERVO_MIN_ANGLE = 0
+SERVO_MAX_ANGLE = 180
+SERVO_DEFAULT_ANGLE = 90
+
+
 def map( value, fromLow, fromHigh, toLow, toHigh): # map a value from one range to another range
  return (toHigh-toLow)*(value-fromLow) / (fromHigh-fromLow) + toLow
 
+def get_min_duty(offset):
+    return 2.5 + offset
+
+def get_max_duty(offset):
+    return 12.5 + offset
+
 class ServoController(Node):
 
-    def __init__(self, servo_pin: int, offset: int):
+    def __init__(self):
         super().__init__('servo_controller')
-        self.servo_frequency = 50
-        self.servo_pin = servo_pin
-        self.offset = offset
-        self.min_duty = 2.5 + self.offset
-        self.max_duty = 12.5 + self.offset
+        self.declare_parameter(SERVO_PIN_PARAM_NAME, 12)
+        self.declare_parameter(SERVO_FREQUENCY_PARAM_NAME, 50)
+        self.declare_parameter(SERVO_OFFSET_PARAM_NAME, 0.5)
         self.servo = None
-        self.angle = 90
+        self.angle = SERVO_DEFAULT_ANGLE
         self.duty_cycle = 0
         self._action_server = ActionServer(
             self,
@@ -27,23 +40,26 @@ class ServoController(Node):
         )
 
     def __set_duty_cycle(self):
-        duty_cycle = map(self.angle, 0, 180, self.min_duty, self.max_duty)
+        offset = self.get_parameter(SERVO_OFFSET_PARAM_NAME).get_parameter_value()
+        duty_cycle = map(self.angle, SERVO_MIN_ANGLE, SERVO_MAX_ANGLE, get_min_duty(offset), get_max_duty(offset))
         self.get_logger().debug(f"Modified Duty Cycle | Previous: {self.duty_cycle} | New: {duty_cycle}")
         self.servo.ChangeDutyCycle(duty_cycle)
         self.duty_cycle = duty_cycle
         return self
 
     def __set_angle(self, angle: int):
-        if not angle > 0 and angle < 180:
-            self.get_logger().error(f"Invalid Angle Set | Must be between 0 and 180 | Got: {angle}")
+        if not angle > SERVO_MIN_ANGLE and angle < SERVO_MAX_ANGLE:
+            self.get_logger().error(f"Invalid Angle Set | Must be between {SERVO_MIN_ANGLE} and {SERVO_MAX_ANGLE} | Got: {angle}")
             return
         self.angle = angle
         return self
+
     def setup(self):
         GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(self.servo_pin, GPIO.OUT)
-        GPIO.output(self.servo_pin, GPIO.LOW)
-        self.servo = GPIO.PWM(self.servo_pin, self.servo_frequency)
+        servo_pin = self.get_parameter(SERVO_PIN_PARAM_NAME).get_parameter_value()
+        GPIO.setup(servo_pin, GPIO.OUT)
+        GPIO.output(servo_pin, GPIO.LOW)
+        self.servo = GPIO.PWM(servo_pin, self.get_parameter(SERVO_FREQUENCY_PARAM_NAME).get_parameter_value())
         self.servo.start(0)
         return self
     
