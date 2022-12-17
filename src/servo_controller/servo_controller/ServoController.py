@@ -89,12 +89,13 @@ class ServoController(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    servo_pin=12
-    offset = 0.5
     servo_controller = ServoController()
     servo_controller.setup()
     rclpy.spin(servo_controller)
     servo_controller.stop()
+    servo_controller.destroy_node()
+    rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()

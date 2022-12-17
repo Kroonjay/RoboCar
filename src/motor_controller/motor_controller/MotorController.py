@@ -93,7 +93,8 @@ def main(args=None):
     motor_controller.setup()
     rclpy.spin(motor_controller)
     motor_controller.stop()
-
+    motor_controller.destroy_node()
+    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()

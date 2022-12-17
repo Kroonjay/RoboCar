@@ -25,9 +25,17 @@ endif()
 
 find_package(rosidl_default_generators REQUIRED)
 
-rosidl_generate_interfaces(${PROJECT_NAME}
+set(action_files
   "action/Motor.action"
   "action/Servo.action"
+  )
+set(msg_files
+  "msg/IMU.msg"
+  )
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  ${msg_files}
+  ${action_files}
 )
 
 ament_package()
