@@ -37,7 +37,7 @@ class IMUController(Node):
         super().__init__('imu_controller')
         self._publisher = self.create_publisher(IMU, TOPIC_NAME, QUEUE_SIZE)
         self.declare_parameter(POLL_INTERVAL_PARAM_NAME, 0.5)
-        self.timer = self.create_timer(self.get_parameter(POLL_INTERVAL_PARAM_NAME), self.poll_imu)
+        self.timer = self.create_timer(self.get_parameter(POLL_INTERVAL_PARAM_NAME).get_parameter_value().double_value, self.poll_imu)
         self.mpu = MPU6050.MPU6050()
     
     def poll_imu(self):
